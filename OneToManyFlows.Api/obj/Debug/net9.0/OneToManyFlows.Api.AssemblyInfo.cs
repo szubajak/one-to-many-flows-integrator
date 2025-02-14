@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OneToManyFlows.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+35ec0e88fb1c2a493eed8bb9d609b99ddab5f7fe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a31f4ea0234f780e161ea6e7092cbf71332ed508")]
 [assembly: System.Reflection.AssemblyProductAttribute("OneToManyFlows.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OneToManyFlows.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
