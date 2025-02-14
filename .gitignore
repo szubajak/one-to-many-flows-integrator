@@ -1,9 +1,3 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/.vs/OneToManyFlows
-/OneToManyFlows/bin/Debug/netcoreapp2.2
-/OneToManyFlows/obj
-/OneToManyFlows.Tests/bin/Debug/netcoreapp2.2
-/OneToManyFlows.Tests/obj
+.vs
+bin
+obj

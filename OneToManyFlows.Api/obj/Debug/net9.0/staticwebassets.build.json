@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Z7eqkjO2eS5pQl/J0do/8hr3+xMrWQwne4EmbyhIqBM=",
+  "Source": "OneToManyFlows.Api",
+  "BasePath": "_content/OneToManyFlows.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

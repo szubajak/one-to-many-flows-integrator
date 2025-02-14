@@ -1,0 +1,56 @@
+[
+  {
+    "ContainingType": "OneToManyFlows.Api.Flows.OtherFlowController",
+    "Method": "Execute",
+    "RelativePath": "OtherFlow",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestDto",
+        "Type": "OneToManyFlows.Api.Flows.OtherFlowRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "OneToManyFlows.Api.Flows.OtherFlowResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "OtherFlowController"
+  },
+  {
+    "ContainingType": "OneToManyFlows.Api.Flows.SomeFlowController",
+    "Method": "Execute",
+    "RelativePath": "SomeFlow",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestDto",
+        "Type": "OneToManyFlows.Api.Flows.SomeFlowRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "OneToManyFlows.Api.Flows.SomeFlowResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "SomeFlowController"
+  }
+]

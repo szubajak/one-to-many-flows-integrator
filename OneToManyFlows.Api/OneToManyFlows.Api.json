@@ -1,0 +1,181 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OneToManyFlows.Api | v1",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/OtherFlow": {
+      "post": {
+        "tags": [
+          "OtherFlow"
+        ],
+        "operationId": "OtherFlowController",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OtherFlowRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OtherFlowRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OtherFlowRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OtherFlowResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OtherFlowResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OtherFlowResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SomeFlow": {
+      "post": {
+        "tags": [
+          "SomeFlow"
+        ],
+        "operationId": "SomeFlowController",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SomeFlowRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SomeFlowRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SomeFlowRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SomeFlowResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SomeFlowResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SomeFlowResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "OtherFlowRequestDto": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/Provider"
+          }
+        }
+      },
+      "OtherFlowResponseDto": {
+        "type": "object",
+        "properties": {
+          "providerName": {
+            "type": "string"
+          },
+          "randomIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        }
+      },
+      "Provider": {
+        "type": "integer"
+      },
+      "SomeFlowRequestDto": {
+        "type": "object",
+        "properties": {
+          "idsCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/Provider"
+          }
+        }
+      },
+      "SomeFlowResponseDto": {
+        "required": [
+          "providerName",
+          "randomIds"
+        ],
+        "type": "object",
+        "properties": {
+          "providerName": {
+            "type": "string"
+          },
+          "randomIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "OtherFlow"
+    },
+    {
+      "name": "SomeFlow"
+    }
+  ]
+}

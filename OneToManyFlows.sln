@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29025.244
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneToManyFlows", "OneToManyFlows\OneToManyFlows.csproj", "{6C8950D5-955C-46FD-9AF1-AAD97C98370A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneToManyFlows.Api", "OneToManyFlows.Api\OneToManyFlows.Api.csproj", "{DAEA616E-04D2-47D3-A2AD-0C86BCFB4952}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneToManyFlows.Tests", "OneToManyFlows.Tests\OneToManyFlows.Tests.csproj", "{7DA6EA28-2E48-477D-A79D-DF7383AA018E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{215C10B7-60E5-4221-93AB-7FCB97CECD83}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7AEA72E7-936D-4216-A00E-83FD5A680BDF}"
 	ProjectSection(SolutionItems) = preProject
-		overview.jpg = overview.jpg
-		stylecop.ruleset = stylecop.ruleset
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneToManyFlows.Api.Tests", "OneToManyFlows.Api.Tests\OneToManyFlows.Api.Tests.csproj", "{798457D2-C372-4237-915E-5A005C0D8839}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6C8950D5-955C-46FD-9AF1-AAD97C98370A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C8950D5-955C-46FD-9AF1-AAD97C98370A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C8950D5-955C-46FD-9AF1-AAD97C98370A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C8950D5-955C-46FD-9AF1-AAD97C98370A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7DA6EA28-2E48-477D-A79D-DF7383AA018E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7DA6EA28-2E48-477D-A79D-DF7383AA018E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7DA6EA28-2E48-477D-A79D-DF7383AA018E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7DA6EA28-2E48-477D-A79D-DF7383AA018E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAEA616E-04D2-47D3-A2AD-0C86BCFB4952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAEA616E-04D2-47D3-A2AD-0C86BCFB4952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAEA616E-04D2-47D3-A2AD-0C86BCFB4952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAEA616E-04D2-47D3-A2AD-0C86BCFB4952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{798457D2-C372-4237-915E-5A005C0D8839}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{798457D2-C372-4237-915E-5A005C0D8839}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{798457D2-C372-4237-915E-5A005C0D8839}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{798457D2-C372-4237-915E-5A005C0D8839}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
