@@ -9,6 +9,7 @@ public class OtherFlowController(IServiceProvider services) : ControllerBase
 {
     [HttpPost(Name = nameof(OtherFlowController))]
     [ProducesResponseType(typeof(OtherFlowResponseDto), StatusCodes.Status200OK)]
+    [EndpointDescription("Dummy endpoint to produce random string")]
     public async Task<IActionResult> Execute([FromBody] OtherFlowRequestDto requestDto, CancellationToken cancellationToken)
     {
         var handler = services.GetKeyedService<IOtherFlowHandler>(requestDto.Provider);

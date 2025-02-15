@@ -8,6 +8,11 @@ builder.Logging.AddConsole();
 
 builder.Services.AddKeyedTransient<ISomeFlowHandler, GoogleSomeFlowRequestHandler>(Provider.Google);
 builder.Services.AddKeyedTransient<ISomeFlowHandler, MicrosoftSomeFlowRequestHandler>(Provider.Microsoft);
+builder.Services.AddKeyedTransient<ISomeFlowHandler, AwsSomeFlowRequestHandler>(Provider.Aws);
+
+builder.Services.AddKeyedTransient<IOtherFlowHandler, GoogleOtherFlowRequestHandler>(Provider.Google);
+builder.Services.AddKeyedTransient<IOtherFlowHandler, MicrosoftOtherRequestHandler>(Provider.Microsoft);
+builder.Services.AddKeyedTransient<IOtherFlowHandler, AwsOtherFlowRequestHandler>(Provider.Aws);
 
 builder.Services.AddControllers();
 

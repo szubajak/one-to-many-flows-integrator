@@ -2,5 +2,5 @@ namespace OneToManyFlows.Api.Core;
 
 public abstract class HaveProvider
 {
-    public Provider Provider { get; init; }
+    public required Provider Provider { get; init; }
 }

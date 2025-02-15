@@ -2,18 +2,18 @@ using OneToManyFlows.Api.Core;
 
 namespace OneToManyFlows.Api.Flows;
 
-public class GoogleOtherFlowRequestHandler(ILogger<GoogleOtherFlowRequestHandler> logger) : IOtherFlowHandler
+public class AwsOtherFlowRequestHandler(ILogger<AwsOtherFlowRequestHandler> logger) : IOtherFlowHandler
 {
     public async Task<OtherFlowResponseDto?> Handle(OtherFlowRequestDto request, CancellationToken cancellationToken)
     {
-        if (request.Provider != Provider.Google)
+        if (request.Provider != Provider.Aws)
         {
             return await Task.FromResult((OtherFlowResponseDto?)null);
         }
 
         logger.LogInformation("Length of string to generate {StringLength}", request.StringLength);
 
-        var chars = "1234567890";
+        var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         var random = new Random();
 
         var response = new OtherFlowResponseDto()
@@ -27,5 +27,4 @@ public class GoogleOtherFlowRequestHandler(ILogger<GoogleOtherFlowRequestHandler
 
         return await Task.FromResult(response);
     }
-
 }

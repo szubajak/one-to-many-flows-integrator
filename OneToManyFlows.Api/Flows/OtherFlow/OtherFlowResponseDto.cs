@@ -2,7 +2,7 @@ namespace OneToManyFlows.Api.Flows;
 
 public class OtherFlowResponseDto
 {
-    public string ProviderName { get; init; }
+    public required string ProviderName { get; init; }
 
-    public IList<Guid> RandomIds { get; init; }
+    public required string RandomString { get; init; }
 }

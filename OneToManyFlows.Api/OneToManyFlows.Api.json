@@ -10,6 +10,7 @@
         "tags": [
           "OtherFlow"
         ],
+        "description": "Dummy endpoint to produce random string",
         "operationId": "OtherFlowController",
         "requestBody": {
           "content": {
@@ -60,6 +61,7 @@
         "tags": [
           "SomeFlow"
         ],
+        "description": "Dummy endpoint to produce collection of random ids",
         "operationId": "SomeFlowController",
         "requestBody": {
           "content": {
@@ -109,9 +111,12 @@
   "components": {
     "schemas": {
       "OtherFlowRequestDto": {
+        "required": [
+          "provider"
+        ],
         "type": "object",
         "properties": {
-          "count": {
+          "stringLength": {
             "type": "integer",
             "format": "int32"
           },
@@ -121,17 +126,17 @@
         }
       },
       "OtherFlowResponseDto": {
+        "required": [
+          "providerName",
+          "randomString"
+        ],
         "type": "object",
         "properties": {
           "providerName": {
             "type": "string"
           },
-          "randomIds": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            }
+          "randomString": {
+            "type": "string"
           }
         }
       },
@@ -139,6 +144,9 @@
         "type": "integer"
       },
       "SomeFlowRequestDto": {
+        "required": [
+          "provider"
+        ],
         "type": "object",
         "properties": {
           "idsCount": {

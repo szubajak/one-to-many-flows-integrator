@@ -4,5 +4,5 @@ namespace OneToManyFlows.Api.Flows;
 
 public class OtherFlowRequestDto : HaveProvider
 {
-    public int Count { get; init; }
+    public int StringLength { get; init; }
 }

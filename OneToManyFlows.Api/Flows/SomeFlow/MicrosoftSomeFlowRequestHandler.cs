@@ -16,7 +16,7 @@ public class MicrosoftSomeFlowRequestHandler(ILogger<MicrosoftSomeFlowRequestHan
         var response = new SomeFlowResponseDto()
         {
             ProviderName = request.Provider.ToString(),
-            RandomIds = Enumerable.Range(0, request.IdsCount).Select(x => $"{Guid.NewGuid()}").ToList(),
+            RandomIds = Enumerable.Range(1, request.IdsCount).Select(x => $"{Guid.NewGuid()}").ToList(),
         };
 
         return await Task.FromResult(response);

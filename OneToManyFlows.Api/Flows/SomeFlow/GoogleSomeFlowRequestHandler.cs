@@ -16,7 +16,7 @@ public class GoogleSomeFlowRequestHandler(ILogger<GoogleSomeFlowRequestHandler> 
         var response = new SomeFlowResponseDto()
         {
             ProviderName = request.Provider.ToString(),
-            RandomIds = Enumerable.Range(0, request.IdsCount).Select(x => $"{x}".PadLeft(request.IdsCount.ToString().Length, '0')).ToList(),
+            RandomIds = Enumerable.Range(1, request.IdsCount).Select(x => $"{x}".PadLeft(request.IdsCount.ToString().Length, '0')).ToList(),
         };
 
         return await Task.FromResult(response);
