@@ -6,17 +6,17 @@ using OneToManyFlows.Api.Flows;
 
 namespace OneToManyFlows.Api.Tests.Flows;
 
-public class MicrosoftSomeFlowRequestHandlerTests
+public class GoogleOtherFlowRequestHandlerTests
 {
-    private readonly ILogger<MicrosoftSomeFlowRequestHandler> _logger = null!;
+    private readonly ILogger<GoogleOtherFlowRequestHandler> _logger = null!;
 
-    private readonly MicrosoftSomeFlowRequestHandler _sut;
+    private readonly GoogleOtherFlowRequestHandler _sut;
 
-    public MicrosoftSomeFlowRequestHandlerTests()
+    public GoogleOtherFlowRequestHandlerTests()
     {
-        _logger = Substitute.For<ILogger<MicrosoftSomeFlowRequestHandler>>();
+        _logger = Substitute.For<ILogger<GoogleOtherFlowRequestHandler>>();
 
-        _sut = new MicrosoftSomeFlowRequestHandler(_logger);
+        _sut = new GoogleOtherFlowRequestHandler(_logger);
     }
 
     [Theory]
@@ -27,11 +27,11 @@ public class MicrosoftSomeFlowRequestHandlerTests
     {
         // Arrange
         var ct = new CancellationTokenSource().Token;
-        var idsCount = 100;
+        var stringLength = 100;
 
-        var request = new SomeFlowRequestDto
+        var request = new OtherFlowRequestDto
         {
-            IdsCount = idsCount,
+            StringLength = stringLength,
             Provider = provider
         };
 
@@ -39,14 +39,15 @@ public class MicrosoftSomeFlowRequestHandlerTests
         var response = await _sut.Handle(request, ct);
 
         // Assert
-        if (provider != Provider.Microsoft)
+        if (provider != Provider.Google)
         {
             response.Should().BeNull();
             return;
         }
 
         response.Should().NotBeNull();
-        response.RandomIds.Should().HaveCount(idsCount);
+        response.RandomString.Should().NotBeNullOrEmpty();
+        response.RandomString.Length.Should().Be(stringLength);
         response.ProviderName.Should().Be(provider.ToString());
     }
 }
