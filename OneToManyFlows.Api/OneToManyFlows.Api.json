@@ -106,6 +106,37 @@
           }
         }
       }
+    },
+    "/TestFlow": {
+      "get": {
+        "tags": [
+          "TestFlow"
+        ],
+        "description": "Dummy endpoint for testing purpouses",
+        "operationId": "TestFlowController",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -184,6 +215,9 @@
     },
     {
       "name": "SomeFlow"
+    },
+    {
+      "name": "TestFlow"
     }
   ]
 }

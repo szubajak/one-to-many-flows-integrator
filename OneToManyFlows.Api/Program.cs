@@ -14,6 +14,10 @@ builder.Services.AddKeyedTransient<IOtherFlowHandler, GoogleOtherFlowRequestHand
 builder.Services.AddKeyedTransient<IOtherFlowHandler, MicrosoftOtherRequestHandler>(Provider.Microsoft);
 builder.Services.AddKeyedTransient<IOtherFlowHandler, AwsOtherFlowRequestHandler>(Provider.Aws);
 
+builder.Configuration.AddEnvironmentVariables();
+
+builder.Services.Configure<EntraIdOptions>(builder.Configuration.GetSection(EntraIdOptions.SectionName));
+
 builder.Services.AddControllers();
 
 builder.Services.AddOpenApi();
