@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Identity.Web;
 using OneToManyFlows.Api.Core;
 using OneToManyFlows.Api.Flows;
 using Scalar.AspNetCore;
@@ -20,14 +22,33 @@ builder.Services.Configure<EntraIdOptions>(builder.Configuration.GetSection(Entr
 
 builder.Services.AddControllers();
 
-builder.Services.AddOpenApi();
+
+builder.Services.AddOpenApi(o => o.AddDocumentTransformer<OpenApiSecuritySchemeTransformer>());
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("EntraId"));
+
+builder.Services.AddAuthorization();
+
 
 var app = builder.Build();
 
 app.MapOpenApi();
-app.MapScalarApiReference();
+
+app.MapScalarApiReference(options =>
+{
+    options.AddImplicitFlow("Bearer", flow =>
+    {
+        flow.WithClientId(builder.Configuration.GetValue<string>("EntraId:ClientId"));
+    });
+});
+
 
 app.UseRouting();
+
+app.UseAuthentication();
+
+app.UseAuthorization();
 
 app.MapControllers();
 

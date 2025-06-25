@@ -207,8 +207,27 @@
           }
         }
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "https://login.microsoftonline.com//db01ca04-5803-4f2b-8da7-234443590f7d/oauth2/v2.0/authorize",
+            "tokenUrl": "https://login.microsoftonline.com//db01ca04-5803-4f2b-8da7-234443590f7d/oauth2/v2.0/token",
+            "scopes": {
+              "e366a756-46f6-4f4d-bf41-3d37d5b14107/.default": "Access the API"
+            }
+          }
+        }
+      }
     }
   },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ],
   "tags": [
     {
       "name": "OtherFlow"

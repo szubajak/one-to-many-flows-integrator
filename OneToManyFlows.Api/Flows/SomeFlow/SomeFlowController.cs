@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OneToManyFlows.Api.Core;
 
 namespace OneToManyFlows.Api.Flows;
 
 [ApiController]
+[Authorize]
 [Route("[controller]")]
 public class SomeFlowController(IServiceProvider services) : ControllerBase
 {
