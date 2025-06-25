@@ -7,6 +7,7 @@ using Scalar.AspNetCore;
 var builder = WebApplication.CreateBuilder(args);
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
+builder.Logging.AddAzureWebAppDiagnostics();
 
 builder.Services.AddKeyedTransient<ISomeFlowHandler, GoogleSomeFlowRequestHandler>(Provider.Google);
 builder.Services.AddKeyedTransient<ISomeFlowHandler, MicrosoftSomeFlowRequestHandler>(Provider.Microsoft);
