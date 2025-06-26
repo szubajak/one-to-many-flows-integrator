@@ -29,6 +29,9 @@ jobs:
       - name: dotnet publish
         run: dotnet publish "OneToManyFlows.Api/OneToManyFlows.Api.csproj" -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
+      - name: List published files
+        run: ls -R "${{env.DOTNET_ROOT}}/myapp"
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
