@@ -1,0 +1,6 @@
+@OneToManyFlows.AuthorizationApi_HostAddress = http://localhost:5096
+
+GET {{OneToManyFlows.AuthorizationApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
