@@ -27,13 +27,13 @@ jobs:
         run: dotnet build "OneToManyFlows.AuthorizationApi/OneToManyFlows.AuthorizationApi.csproj" --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish "OneToManyFlows.AuthorizationApi/OneToManyFlows.AuthorizationApi.csproj" -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+        run: dotnet publish "OneToManyFlows.AuthorizationApi/OneToManyFlows.AuthorizationApi.csproj" -c Release -o publish
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          name: app
+          path: publish
 
   deploy:
     runs-on: windows-latest
@@ -46,7 +46,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: .net-app
+          name: app
       
       - name: Login to Azure
         uses: azure/login@v2
@@ -55,11 +55,14 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_BFE63B7FB2FC4E4C9C89DB8FF539BFDA }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8058AFE475B34D528213DBB192A536C5 }}
 
+      - name: List files for debugging
+        run: dir
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'authszuapi'
           slot-name: 'Production'
-          package: '${{env.DOTNET_ROOT}}/myapp'
+          package: '.'
           
