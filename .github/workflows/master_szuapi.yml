@@ -64,5 +64,5 @@ jobs:
         with:
           app-name: 'szuapi'
           slot-name: 'Production'
-          package: '${{env.DOTNET_ROOT}}/myapp'
+          package: './.net-app'
           
