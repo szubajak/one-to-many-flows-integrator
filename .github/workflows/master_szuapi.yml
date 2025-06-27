@@ -59,7 +59,7 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_EC5D95615DEA4BDAAB0D84FAF55E1653 }}
 
       - name: List files for debugging
-        run: dir /s
+        run: dir
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
