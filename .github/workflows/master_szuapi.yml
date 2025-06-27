@@ -58,6 +58,9 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CEAF483190924356AEE027663A707460 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_EC5D95615DEA4BDAAB0D84FAF55E1653 }}
 
+      - name: List files for debugging
+        run: dir /s
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
