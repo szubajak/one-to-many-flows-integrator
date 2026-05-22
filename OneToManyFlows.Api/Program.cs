@@ -23,7 +23,6 @@ builder.Services.Configure<EntraIdOptions>(builder.Configuration.GetSection(Entr
 
 builder.Services.AddControllers();
 
-
 builder.Services.AddOpenApi(o => o.AddDocumentTransformer<OpenApiSecuritySchemeTransformer>());
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

@@ -1,0 +1,10 @@
+@OneToManyFlows.Api_HostAddress = https://localhost:7235
+
+POST {{OneToManyFlows.Api_HostAddress}}/otherflow
+Content-Type: application/json
+
+{
+  //OtherFlowRequestDto
+}
+
+###
